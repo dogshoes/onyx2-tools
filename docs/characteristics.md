@@ -4,7 +4,7 @@ Services have been identified by using the official GATT services registry (http
 
 ## Service 0000180a-0000-1000-8000-00805f9b34fb (0x180A)
 
-[Device information service.](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.device_information.xml)
+[Device information service.](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.device_information.xml)  This is a standard service.
 
 ### Characteristic 00002a29-0000-1000-8000-00805f9b34fb (0x2A29)
 
@@ -71,7 +71,7 @@ Should read the currently running firmware on the Onyx.
 
 ## Service 00001800-0000-1000-8000-00805f9b34fb (0x1800)
 
-[Generic access service.](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.generic_access.xml)
+[Generic access service.](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.generic_access.xml)  This is a standardized service.
 
 ### Characteristic 00002a00-0000-1000-8000-00805f9b34fb (0x2A00)
 
@@ -106,7 +106,7 @@ Will read 0x0000.  This is the undefined device apperance.
 
 ## Service 00001801-0000-1000-8000-00805f9b34fb (0x1801)
 
-[Generic attribute service.](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.generic_attribute.xml)
+[Generic attribute service.](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.generic_attribute.xml)  This is a standard service.
 
 ### Characteristic 00002a05-0000-1000-8000-00805f9b34fb
 
@@ -115,7 +115,7 @@ Will read 0x0000.  This is the undefined device apperance.
 
 ## Service 0000180f-0000-1000-8000-00805f9b34fb (0x180F)
 
-[Battery service.](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.battery_service.xml)
+[Battery service.](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.battery_service.xml)  This is a standard service.
 
 ### Characteristic 00002a19-0000-1000-8000-00805f9b34fb (0x2A19)
 
@@ -127,7 +127,7 @@ Returns a value between 0% (`0x00`) and 100% (`0x64`).
 
 ## Service 00001804-0000-1000-8000-00805f9b34fb (0x1804)
 
-[Tx power service.](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.tx_power.xml)
+[Tx power service.](https://www.bluetooth.com/specifications/gatt/viewer?attributeXmlFile=org.bluetooth.service.tx_power.xml)  This is a standard service.
 
 ### Characteristic 00002a07-0000-1000-8000-00805f9b34fb (0x2A07)
 
@@ -144,7 +144,7 @@ Onyx service.
 **Properties:** Read, Notify  
 **Type:** int8
 
-*Unsure, currently returns 0x00.*
+*Unsure, currently always returns `0x00`.*
 
 ### Characteristic 0000a001-0000-1000-8000-00805f9b34fb (0xA001)
 
@@ -167,6 +167,8 @@ Returns `0x00` if the Onyx is not plugged in and is discharging, `0x01` if the O
 **Characteristic:** "James Bonding"  
 **Properties:** Read
 
+Reading this using `LightBlue Explorer` on an iPhone opens a pairing request with the phone.  Presumably used to kick off the pairing process.
+
 ### Characteristic 0000a00a-0000-1000-8000-00805f9b34fb (0xA00A)
 
 **Characteristic:** Audio Transmit State  
@@ -178,7 +180,10 @@ Returns `0x00` if the Oynx is not transmitting audio and `0x01` if the Onyx is t
 ### Characteristic 0000a10f-0000-1000-8000-00805f9b34fb (0xA10F)
 
 **Characteristic:** Log Flags  
-**Properties:** Read, Write
+**Properties:** Read, Write  
+**Type:** int8
+
+Initially set to `0x00000000`.
 
 ### Characteristic 0000a110-0000-1000-8000-00805f9b34fb (0xA110)
 
@@ -186,7 +191,7 @@ Returns `0x00` if the Oynx is not transmitting audio and `0x01` if the Onyx is t
 **Properties:** Read, Write  
 **Type:** int32
 
-*Read and write the orion client error register, value is 0x00000000 by default and will remain at any value written.*
+*Read and write the orion client error register, value is `0x00000000` by default and will remain at any value written.*
 
 ### Characteristic 0000a111-0000-1000-8000-00805f9b34fb (0xA111)
 

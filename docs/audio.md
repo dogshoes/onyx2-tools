@@ -45,6 +45,8 @@ handle: 0x008e, char properties: 0x8c, char value handle: 0x008f, uuid: 777445ea
 ...
 ```
 
+Feed the following script in to `gatttool` to hear me clearing my throat.
+
 ```
 char-write-cmd 005e 01
 char-write-cmd 0086 4884ea83c8282948c2b90e586f2cb301218b472b
